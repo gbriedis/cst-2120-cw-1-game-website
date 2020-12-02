@@ -16,47 +16,37 @@
 
 <body>
     <div class="container">
-        <!-- nav -->
-        <nav>
-            <a href="index.html">Ginters</a>
-            <div class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="game.html">Game</a></li>
-                    <li><a href="leaderboard.html">Genius List</a></li>
-                </ul>
+    <!-- nav -->
+    <nav>
+        <a href="index.html">Ginters</a>
+        <div class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="leaderboard.html">Genius List</a></li>
+            </ul>
 
-            </div>
-            <!-- sub nav -->
-            <div class="sub-nav">
-                <ul>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <!-- game content -->
-        <div class="game-container">
-            <div class="info-main">
-                <h2>Hi [Name],</h2>
-                <h2>From what I can see your best score is [6]</h2>
-                <h2>From my calculations, you’re just as good as a [6th Grader].</h2>
-                <h2>To see how you compare with the rest just go to the <a href="leaderboard.html">genius list</a></h2>
-            </div>
-    
-            <div class="game-main">
-                <h2>Time Remaining: 57s</h2>
-                <h2>Score: 2/3</h2>
-                <h1>8 * 8 = [Answer]</h1>
-            </div>
-
-            <div class="game-main-sub">
-                <a href="#"><button id="restart-button">Restart</button></a>
-                <a href="#"><button class="default-button">Rules</button></a>
-                <a href="#"><button class="default-button">Report!</button></a>
-            </div>
         </div>
+        <!-- sub nav -->
+        <div class="sub-nav">
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- game content -->
+    <div id="game">
+        <div id="infoPanel">
+            <button id="startBtn">START</button>
+            <div id="counter"></div>
+        </div>
+        <canvas id="myCanvas" width="800" height="500">
+
+        </canvas>
+
+    </div>
     </div>
 
     <!-- footer -->
@@ -99,6 +89,7 @@
             </div>
         </div>
     </div>
+    <script type="application/javascript" src="assets/js/game.js"></script>
 </body>
 
 </html>

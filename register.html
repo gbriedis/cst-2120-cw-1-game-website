@@ -41,19 +41,22 @@
             <h1>Register</h1>
 
             <div class="form">
-                <input type="text" placeholder="Username" autocomplete="off" name="password" required>
-
-                <input type="text" placeholder="Password" autocomplete="off" name="password" required>
-                <input type="text" placeholder="Confirm Password" autocomplete="off" name="password" required>
-
-                <input type="text" placeholder="E-mail address" autocomplete="off" name="email" required>
-                <input type="text" placeholder="Phone Number" autocomplete="off" name="phone-number" required>
+                <form name="form1" onsubmit="return register()">
+                    <input id="username" type="text" placeholder="Username" autocomplete="off" required>
+    
+                    <input id="password" type="text" placeholder="Password" autocomplete="off" required>
+                    <input id="confirmPassword" type="text" placeholder="Confirm Password" autocomplete="off"  required>
+    
+                    <input id="email" type="text" placeholder="E-mail address" autocomplete="off" required>
+                    <input id="phoneNumber" type="text" placeholder="Phone Number" autocomplete="off"  required>
+    
+                    <button id="btnRegister">Register</button>
+                </form>
             </div>
-
+            <!--
                 <input type="checkbox" name="terms">
                 <label for="terms">Confirm terms and conditions</label>
-            
-            <button>Register</button>
+            -->
         </div>
 
     </div>
@@ -98,6 +101,7 @@
             </div>
         </div>
     </div>
-</body>
 
+<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
 </html>
