@@ -215,19 +215,36 @@ section {
 }
 
 /* Start of game.html CSS */
+
+canvas {
+    border: 2px solid #FFF06C;
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 800px;
+    margin-bottom: 3em;
+}
+
 #infoPanel {
+    position: block;
     max-width: 800px;
-    margin: 2em 0;
+    margin-top: 2em;
     
 }
 
 #counter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -18.5px;
-    z-index: 2;
-    font-size: 64px;
+    position: relative;
+    top: -1.5em;
+    left: 25%;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#score {
+    position: relative;
+    top: -2.7em;
+    right: -35em;
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -245,8 +262,8 @@ section {
 }
 
 #startBtn:hover {
-    border: 3px solid orange;
-    color: orange;
+    border: 3px solid #FFF06C;
+    color: #FFF06C;
 }
 
 /* leaderboard css */

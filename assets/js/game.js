@@ -1,53 +1,68 @@
-let inPlay = false, gameTime;
-let startBtn = document.getElementById("startBtn"),
-    counterText = document.getElementById("counter");
+let score = 0;
 
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+const scoreText = document.getElementById("score");
 
-canvas.style = "position:relative; left: 50%; width: 800px; margin-left: -400px; border: 5px solid #FFF06C;";
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = 800;
+canvas.height = 400;
 
-function randomInt(max){
-    return Math.floor(Math.random() * Math.floor(max));
+function randInt(min, max) {
+    return Math.random() * (max - min) + min;
 }
+// Bubble class containing its properties, draw function
+class Bubble {
+    constructor(x, y, radius, colour) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.colour = colour;
+    }
 
-startBtn.addEventListener("click", function(){
-    gameTime = Date.now();
-    checkTimer(true);
-})
-
-function Circle(x, y, radius) {
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    
-    this.drawCircle = function() {
+    draw() {
         ctx.beginPath();
-        ctx.fillStyle = "green";
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.colour;
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
         ctx.fill();
         ctx.closePath();
     }
-
 }
 
-function checkTimer(bool) {
-    if(true) {
-        const diff = 30 - Math.floor((Date.now() - gameTime) / 1000);
-        if(diff > -1) {
-            counterText.textContent = diff;
-        }
-    }
-    else {
-        gameOver();
-    }
-
+const bubbles = [];
+function spawnBubbles() {
+    setInterval(() => {
+        radius = 20;
+        randX = randInt(radius, canvas.width - radius);
+        randY = randInt(radius, canvas.height - radius);
+        bubbles.push(new Bubble(randX, randY, radius, "yellow"));
+    }, 700)
 }
 
-// Animation
 function animate() {
     requestAnimationFrame(animate);
-}
-setInterval(checkTimer, 100);
-animate();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    bubbles.forEach((bubble, index) => {
+        bubble.draw();
+        const dist = Math.hypot(userX - bubble.x, userY - bubble.y);
+        if(dist - bubble.radius < 0.5) {
+            bubbles.splice(index, 1);
+            score++;
+            scoreText.textContent = "Score: " + score;
+        }  
+        if(bubbles > 10) {
+            endGame();
+        }
+    })
+}
+
+let userX;
+let userY;
+addEventListener("click", (event) => {
+    let rect = canvas.getBoundingClientRect(); 
+    userX = event.clientX - rect.left; 
+    userY = event.clientY - rect.top; 
+})
+
+animate();
+spawnBubbles();
