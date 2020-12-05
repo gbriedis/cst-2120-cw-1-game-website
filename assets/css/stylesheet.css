@@ -228,8 +228,7 @@ canvas {
 #infoPanel {
     position: block;
     max-width: 800px;
-    margin-top: 2em;
-    
+    margin-top: 2em;   
 }
 
 #counter {
@@ -237,6 +236,17 @@ canvas {
     top: -1.5em;
     left: 25%;
     font-size: 24px;
+    font-weight: 600;
+}
+
+#user {
+    position: relative;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#highscore{
+    font-size: 16px;
     font-weight: 600;
 }
 

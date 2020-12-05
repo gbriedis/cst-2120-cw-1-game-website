@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1440px, initial-scale=1.0">
+    <meta name="viewport" content="width=1440, initial-scale=1.0">
     <title>Login</title>
 
     <!-- link to css stylesheet-->
@@ -32,6 +32,7 @@
                 <ul>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="register.html">Register</a></li>
+                    <div id="logout"></div>
                 </ul>
             </div>
         </nav>
@@ -42,13 +43,12 @@
             <h1>Login</h1>
 
             <div class="form">
-                <input type="text" placeholder="Username" autocomplete="off" name="password" required>
-
-                <input type="text" placeholder="Password" autocomplete="off" name="password" required>
-
-                <a id="forgot-password" href="#">Forgot your password?</a>
-
-                <button>Login</button>
+                <div id="loginError"></div>
+                <form id="loginForm">
+                    <input id="username" type="text" placeholder="Username" autocomplete="off">
+                    <input id="password" type="text" placeholder="Password" autocomplete="off">
+                    <button id="loginBtn" type="submit" onclick="login()">Login</button>
+                </form>
             </div>
 
 
@@ -95,6 +95,6 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/loginUser.js"></script>
 </body>
 </html>
