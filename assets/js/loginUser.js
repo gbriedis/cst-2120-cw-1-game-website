@@ -1,20 +1,21 @@
-const logout = document.getElementById("logout");
 
 function login() {
-    let parssedUsers  = JSON.parse(localStorage.getItem('users'));
-    let usrInput = {};
-    let login = [];
-    usrInput.username = document.getElementById("username").value;
-    usrInput.password = document.getElementById("password").value;
-
-    if (usrInput.username == parssedUsers.username && usrInput.password == parssedUsers.password) {
-        login.push(parssedUsers.username);
-        sessionStorage.setItem('Username', login);
-        logout.textContent = "Logout";
+    username = document.getElementById("username").value;
+    if(localStorage[username] === undefined){
+        alert("Username not found");
+        return;
     }
     else {
-        alert("username or password is incorrect");
+        password = document.getElementById("password").value;
+        let parssedUsers  = JSON.parse(localStorage[username]);
+        if (parssedUsers.password == password) {
+            let user = parssedUsers.username;
+            sessionStorage.setItem("username", JSON.stringify(user));
+            alert("Welcome " + user);
+        }
+        else {
+            alert("username or password is incorrect");
+        }
     }
 
 }
-

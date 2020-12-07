@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1440px, initial-scale=1.0">
+    <meta name="viewport" content="width=1440, initial-scale=1.0">
+
     <title>Game</title>
 
     <!-- link to css stylesheet-->
@@ -23,7 +24,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="game.html">Game</a></li>
-                <li><a href="leaderboard.html">Genius List</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
             </ul>
 
         </div>
@@ -32,6 +33,7 @@
             <ul>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
+                <li><a onclick="logout()" href="#">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -40,13 +42,12 @@
     <div id="game">
         <div id="infoPanel">
             <button id="startBtn">START</button>
-            <div id="counter">Timeleft: </div>
+            <div id="counter">Time left: </div>
             <div id="score">Score: </div>
             <div id="user">User:</div>
-            <div id="highscore">Best Score: </div>
         </div>
         <canvas>
-
+            
         </canvas>
 
     </div>
@@ -92,8 +93,8 @@
             </div>
         </div>
     </div>
-    <script type="application/javascript" src="assets/js/user.js"></script>
     <script type="application/javascript" src="assets/js/game.js"></script>
+    <script type="application/javascript" src="assets/js/logout.js"></script>
 </body>
 
 </html>

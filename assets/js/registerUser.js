@@ -32,15 +32,17 @@ registerForm.addEventListener("submit", (e) => {
 
 
 function register() {
-    let users = {
+    let user = {
+        ID: "#" + (Math.floor(Math.random(100, 999) * 999)),
         username: document.getElementById("username").value,
         password: document.getElementById("password").value,
         cpassword: document.getElementById("confirmPassword").value,
         email: document.getElementById("email").value,
-        pnumber: document.getElementById("number")
+        pnumber: document.getElementById("phoneNumber").value
     }
-    let uniqueID = '#' + users.username.substr(0,2).toUpperCase() + (Math.floor(Math.random(100, 999) * 999));
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    users.push(user);
 
-    localStorage.setItem('users',JSON.stringify(users));
+    localStorage[user.username] = JSON.stringify(user);
     alert("Successfully Registered");
 }

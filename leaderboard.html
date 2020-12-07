@@ -23,7 +23,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="game.html">Game</a></li>
-                    <li><a href="leaderboard.html">Genius List</a></li>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
                 </ul>
 
             </div>
@@ -32,53 +32,24 @@
                 <ul>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="register.html">Register</a></li>
+                    <li><a onclick="logout()" href="#">Logout</a></li>
                 </ul>
             </div>
         </nav>
 
         <!-- leaderboard -->
 
-        <table class="leaderboard">
-            <tr>
-                <th>Place</th>
-                <th>Username</th>
-                <th>Correct Answers</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Ginters</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Ginters</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Ginters</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Ginters</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Ginters</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Ginters</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Ginters</td>
-                <td>14</td>
-            </tr>
+        <table id="table" class="leaderboard">
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
         </table>
     </div>
 
@@ -122,6 +93,10 @@
             </div>
         </div>
     </div>
+
+<script type="application/javascript" src="assets/js/leaderboard.js"></script>
+<script type="application/javascript" src="assets/js/logout.js"></script>
+
 </body>
 
 </html>
